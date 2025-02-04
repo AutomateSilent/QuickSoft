@@ -1,16 +1,10 @@
 # 🚀 QuickSoft PowerShell Module
 
 ![Test PowerShell Module](https://github.com/AutomateSilent/QuickSoft/workflows/Test%20PowerShell%20Module/badge.svg)
-[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/QuickSoft?style=flat-square&logo=powershell&label=PSGallery&color=blue)](https://www.powershellgallery.com/packages/QuickSoft/1.0.0)
+[![PSGallery Version](https://img.shields.io/powershellgallery/v/QuickSoft?style=flat-square&logo=powershell&label=PSGallery&color=blue)](https://www.powershellgallery.com/packages/QuickSoft)
 
 ## 📖 Overview
 QuickSoft is a robust PowerShell module designed for streamlined software management and system monitoring. Built with automation in mind, it simplifies software inventory, deployment detection, and system monitoring tasks.
-
-## ⚡ Quick Installation
-
-### PowerShell Gallery
-```powershell
-Install-Module -Name QuickSoft -Scope CurrentUser
 
 ## ✨ Key Features
 - 📦 Software Management (inventory, installation, uninstallation)
@@ -25,6 +19,18 @@ Install-Module -Name QuickSoft -Scope CurrentUser
 - Windows operating system
 
 ## ⚡ Quick Installation
+
+### PowerShell Gallery (Recommended)
+```powershell
+# Install from PSGallery (Recommended)
+Install-Module -Name QuickSoft -Scope CurrentUser
+
+# Import and verify
+Import-Module QuickSoft
+Get-Command -Module QuickSoft
+```
+
+### Manual Installation
 1. Download and extract the module
 2. Place in one of these locations:
    ```powershell
@@ -56,27 +62,23 @@ Quick Tip: Use tab completion to explore commands and parameters.
 
 ## 🤝 Contributing
 We welcome contributions! Please follow these steps:
-1. 🍴 Fork the repository
-2. 🌿 Create a feature branch
-3. ✍️ Make your changes
-4. 📝 Update documentation
-5. 🧪 Add/update tests
-6. 📦 Submit a pull request
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Update documentation
+5. Submit a pull request
 
-### Development Guidelines
-- Use approved verbs (`Get-Verb` for list)
-- Include comment-based help
-- Maintain backward compatibility
-- Add proper error handling
+For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🐛 Issues and Support
 - Report bugs via GitHub Issues
-- Check existing issues before reporting
 - Include PowerShell and OS version details
 - Provide minimal reproduction steps
 
-## 🔄 Version History
-See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
+## 📖 Documentation
+- [Changelog](CHANGELOG.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
