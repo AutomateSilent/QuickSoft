@@ -24,7 +24,6 @@ jobs:
         Copy-Item -Path ".\QuickSoft.ps*1" -Destination $releasePath
         Copy-Item -Path ".\Public" -Destination $releasePath -Recurse
         Copy-Item -Path ".\LICENSE" -Destination $releasePath
-        Copy-Item -Path ".\README.md" -Destination $releasePath
         
         # Create the zip file with the version in its name (not the folder)
         $zipName = "QuickSoft-${{ github.ref_name }}.zip"
