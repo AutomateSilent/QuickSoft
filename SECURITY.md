@@ -13,7 +13,7 @@ Use this section to tell people about which versions of your project are current
 We take the security of QuickSoft seriously. If you believe you have found a security vulnerability, please follow these steps:
 
 1. **DO NOT** open a public issue
-2. Send a private report to [sameoldjeans@yahoo.com] (replace with your email)
+2. Send a private report to [automate.silent@gmail.com]
 3. Include as much information as possible:
    - A clear description of the vulnerability
    - Steps to reproduce the issue
