@@ -28,7 +28,7 @@ jobs:
         Copy-Item -Path ".\README.md" -Destination $releasePath
         
         # Create zip file
-        Compress-Archive -Path "$releasePath\*" -DestinationPath ".\QuickSoft-$version.zip"
+        Compress-Archive -Path "$releasePath\*" -DestinationPath ".\QuickSoft.zip"
     
     - name: Create Release
       id: create_release
