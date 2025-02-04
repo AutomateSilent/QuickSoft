@@ -15,8 +15,8 @@ jobs:
     - name: Create Module Package
       shell: pwsh
       run: |
-        # Create release folder with version-specific name
-        $releasePath = ".\release\QuickSoft-${{ github.ref_name }}"
+        # Create release folder
+        $releasePath = ".\release\QuickSoft"
         New-Item -Path $releasePath -ItemType Directory -Force
         
         # Copy module files
@@ -25,13 +25,9 @@ jobs:
         Copy-Item -Path ".\LICENSE" -Destination $releasePath
         Copy-Item -Path ".\README.md" -Destination $releasePath
         
-        # Rename the folder to "QuickSoft" before zipping
-        $finalReleasePath = ".\release\QuickSoft"
-        Rename-Item -Path $releasePath -NewName $finalReleasePath
-        
-        # Create zip file (INCLUDE THE "QuickSoft" FOLDER)
+        # Create zip file (INCLUDE THE FOLDER)
         $zipName = "QuickSoft-${{ github.ref_name }}.zip"
-        Compress-Archive -Path "$finalReleasePath" -DestinationPath "./$zipName"
+        Compress-Archive -Path "$releasePath" -DestinationPath "./$zipName"
 
     - name: Create Release
       id: create_release
