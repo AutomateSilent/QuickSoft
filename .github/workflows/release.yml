@@ -26,7 +26,7 @@ jobs:
         Copy-Item -Path ".\LICENSE" -Destination $releasePath
         
         # Create the zip file with the version in its name (not the folder)
-        $zipName = "QuickSoft.zip"
+        $zipName = "QuickSoft-${{ github.ref_name }}.zip"
         Compress-Archive -Path "$releasePath" -DestinationPath "./$zipName"
 
     - name: Create Release
