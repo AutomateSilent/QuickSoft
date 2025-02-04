@@ -10,8 +10,6 @@ Describe "QuickSoft Module Tests" {
             Get-Module QuickSoft | Should -Not -BeNull
         }
     }
-
-    # Add more test cases here for your specific functions
 }
 
 AfterAll {
