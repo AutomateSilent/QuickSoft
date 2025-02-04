@@ -20,7 +20,8 @@ QuickSoft is a robust PowerShell module designed for streamlined software manage
 
 ## ⚡ Quick Installation
 
-### PowerShell Gallery (Recommended)
+### PowerShell Gallery (Recommended) 
+[![PSGallery Version](https://img.shields.io/powershellgallery/v/QuickSoft?style=flat-square&logo=powershell&label=PSGallery&color=blue)](https://www.powershellgallery.com/packages/QuickSoft)
 ```powershell
 # Install from PSGallery (Recommended)
 Install-Module -Name QuickSoft -Scope CurrentUser
@@ -74,11 +75,14 @@ For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🐛 Issues and Support
-- Report bugs via GitHub Issues
-- Include PowerShell and OS version details
-- Provide minimal reproduction steps
+- [Report a Bug](https://github.com/AutomateSilent/QuickSoft/issues/new?template=bug_report.md)
+- Before submitting an issue:
+  - Check existing issues
+  - Include PowerShell and OS version details
+  - Provide minimal reproduction steps
 
 ## 📖 Documentation
 - [Changelog](CHANGELOG.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Security Policy](SECURITY.md)
+- [Report a Bug](https://github.com/AutomateSilent/QuickSoft/issues/new?template=bug_report.md)
