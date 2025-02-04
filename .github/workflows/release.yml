@@ -14,18 +14,19 @@ jobs:
     
     - name: Create Module Package
       shell: pwsh
-      run: |
-        # Create clean module folder
-        New-Item -Path ".\QuickSoft" -ItemType Directory -Force
+      run: |        
+        # Create release folder
+        $releasePath = ".\release\QuickSoft"
+        New-Item -Path $releasePath -ItemType Directory -Force
         
-        # Copy only essential module files
-        Copy-Item -Path ".\QuickSoft.psd1" -Destination ".\QuickSoft"
-        Copy-Item -Path ".\QuickSoft.psm1" -Destination ".\QuickSoft"
-        Copy-Item -Path ".\Public" -Destination ".\QuickSoft\Public" -Recurse
-        Copy-Item -Path ".\LICENSE" -Destination ".\QuickSoft"
+        # Copy module files
+        Copy-Item -Path ".\QuickSoft.ps*1" -Destination $releasePath
+        Copy-Item -Path ".\Public" -Destination $releasePath -Recurse
+        Copy-Item -Path ".\LICENSE" -Destination $releasePath
+        Copy-Item -Path ".\README.md" -Destination $releasePath
         
-        # Create zip file with just essential files
-        Compress-Archive -Path ".\QuickSoft" -DestinationPath ".\QuickSoft.zip"
+        # Create zip file
+        Compress-Archive -Path "$releasePath\*" -DestinationPath ".\QuickSoft.zip"
     
     - name: Create Release
       id: create_release
@@ -44,6 +45,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./QuickSoft.zip
-        asset_name: QuickSoft.zip
+        asset_path: ./QuickSoft-${{ github.ref_name }}.zip
+        asset_name: QuickSoft-${{ github.ref_name }}.zip
         asset_content_type: application/zip
