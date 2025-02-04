@@ -1,0 +1,50 @@
+name: Test PowerShell Module
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install Required Modules
+      shell: pwsh
+      run: |
+        Install-Module Pester -Force
+        Install-Module PSScriptAnalyzer -Force
+    
+    - name: Validate PowerShell Module
+      shell: pwsh
+      run: |
+        # Check for approved verbs
+        $functions = Get-ChildItem -Path ./Public/*.ps1 | ForEach-Object { $_.BaseName }
+        $invalidVerbs = $functions | ForEach-Object {
+            $verb = ($_ -split '-')[0]
+            if (-not (Get-Verb -Verb $verb)) {
+                $_
+            }
+        }
+        if ($invalidVerbs) {
+            Write-Error "Invalid verbs found in functions: $($invalidVerbs -join ', ')"
+            exit 1
+        }
+        
+        # Run PSScriptAnalyzer
+        $analysis = Invoke-ScriptAnalyzer -Path . -Recurse -Settings PSGallery
+        $analysis | Format-Table -AutoSize
+        if ($analysis.Severity -contains 'Error') {
+            Write-Error "PSScriptAnalyzer found errors"
+            exit 1
+        }
+        
+        # Run Pester Tests
+        $config = New-PesterConfiguration
+        $config.Run.Path = "./Tests"
+        $config.Output.Verbosity = "Detailed"
+        Invoke-Pester -Configuration $config

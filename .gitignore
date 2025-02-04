@@ -1,0 +1,33 @@
+# PowerShell Module specific
+*.psd1.backup
+*.psm1.backup
+
+# VS Code specific
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Windows specific
+[Tt]humbs.db
+*.DS_Store
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Test results
+TestResults/
+coverage/
+
+# Build output
+out/
+build/
+
+# Package files
+*.nupkg
+*.zip
+*.rar

@@ -1,0 +1,52 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Create Module Package
+      shell: pwsh
+      run: |
+        $version = $env:GITHUB_REF -replace 'refs/tags/v', ''
+        
+        # Create release folder
+        $releasePath = ".\release\QuickSoft"
+        New-Item -Path $releasePath -ItemType Directory -Force
+        
+        # Copy module files
+        Copy-Item -Path ".\QuickSoft.ps*1" -Destination $releasePath
+        Copy-Item -Path ".\Public" -Destination $releasePath -Recurse
+        Copy-Item -Path ".\LICENSE" -Destination $releasePath
+        Copy-Item -Path ".\README.md" -Destination $releasePath
+        
+        # Create zip file
+        Compress-Archive -Path "$releasePath\*" -DestinationPath ".\QuickSoft-$version.zip"
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+    
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./QuickSoft-${{ github.ref_name }}.zip
+        asset_name: QuickSoft-${{ github.ref_name }}.zip
+        asset_content_type: application/zip
