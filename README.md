@@ -35,7 +35,7 @@ Get-Command -Module QuickSoft
 1. Download and extract the module
 2. Place in one of these locations:
    ```powershell
-   # Current User (Recommended)
+   # Current User
    $env:USERPROFILE\Documents\WindowsPowerShell\Modules\QuickSoft
 
    # All Users (Requires Admin)

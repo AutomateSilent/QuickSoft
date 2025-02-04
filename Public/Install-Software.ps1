@@ -35,8 +35,8 @@
 .NOTES
     Name: Install-Software
     Author: AutomateSilent
-    Version: 1.0.0
-    Last Updated: 2025-02-03
+    Version: 1.0.1
+    Last Updated: 2025-02-04
 #>
 function Install-Software {
     [CmdletBinding()]
@@ -78,6 +78,8 @@ function Install-Software {
         }
 
         try {
+            # Convert to absolute path to avoid any path-related issues
+            $FilePath = (Resolve-Path $FilePath).Path
             Write-Verbose "Initializing installation process for $FilePath"
         }
         catch {
@@ -96,25 +98,29 @@ function Install-Software {
 
             Write-InstallLog "Starting installation: $FilePath"
 
-            $process = if ($extension -eq 'exe') {
-                $params = @{FilePath = $FilePath; Wait = $true; PassThru = $true}
+            if ($extension -eq 'exe') {
+                $params = @{
+                    FilePath = $FilePath
+                    Wait = $true
+                    PassThru = $true
+                    Verb = 'RunAs'  # Ensures elevated privileges
+                }
                 if ($Arguments) { $params.ArgumentList = $Arguments }
-                Start-Process @params
+                $process = Start-Process @params
             }
             else {
                 # Default MSI arguments (silent install)
-                $msiArgs = "/i `"$FilePath`" /qn"
-                
-                # If user provides custom arguments, use those instead
-                if ($Arguments) {
+                $msiArgs = if ($Arguments) {
                     Write-InstallLog "Using custom MSI arguments: $Arguments"
-                    $msiArgs = "/i `"$FilePath`" $Arguments"
+                    "/i `"$FilePath`" $Arguments"
                 }
                 else {
-                    Write-InstallLog "Using default MSI arguments: $msiArgs"
+                    Write-InstallLog "Using default MSI arguments: /i `"$FilePath`" /qn"
+                    "/i `"$FilePath`" /qn"
                 }
                 
-                Start-Process msiexec -ArgumentList $msiArgs -Wait -PassThru
+                # Use full path to msiexec and run with proper verb
+                $process = Start-Process "C:\Windows\System32\msiexec.exe" -ArgumentList $msiArgs -Wait -PassThru -Verb RunAs
             }
 
             Write-InstallLog "Exit code: $($process.ExitCode). $(if ($process.ExitCode -ne 0) {'Installation failed!'} else {'Success!'})"

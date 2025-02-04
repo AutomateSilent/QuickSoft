@@ -4,7 +4,13 @@ All notable changes to QuickSoft will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2024-02-03
+> Note: Version numbering jumped from 1.0.0 to 1.0.3 to maintain consistency between PSGallery and GitHub repositories due to initial source file upload discrepancies.
+
+## [1.0.3] - 2025-02-04
+### Fixed
+- Install-Software: Resolved MSI error 1619 by implementing proper system elevation and path handling
+
+## [1.0.0] - 2025-02-03
 ### Added
 - Initial release of QuickSoft module
 - Full documentation and help for all functions

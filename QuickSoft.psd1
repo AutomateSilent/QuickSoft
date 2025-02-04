@@ -1,6 +1,6 @@
 @{
     RootModule = 'QuickSoft.psm1'
-    ModuleVersion = '1.0.0'
+    ModuleVersion = '1.0.3'
     GUID = 'f1b27db4-5c57-4848-9e19-1537fc079e74'
     Author = 'AutomateSilent'
     CompanyName = 'AutomateSilent'    # Added this to match author
@@ -25,7 +25,15 @@
             Tags = @('Software', 'Management', 'Monitoring', 'MSI', 'System', 'Theme', 'Windows', 'Automation')  # Added a couple relevant tags
             LicenseUri = 'https://github.com/AutomateSilent/QuickSoft/blob/main/LICENSE'
             ProjectUri = 'https://github.com/AutomateSilent/QuickSoft'
-            ReleaseNotes = 'Initial release of QuickSoft module.'
+            ReleaseNotes = @'
+QuickSoft Module v1.0.3 Updates:
+- Fixed Install-Software MSI installation error 1619 with improved elevation and path handling
+  - Added robust error handling and logging
+- Full software management and monitoring capabilities
+- Complete software inventory and deployment tools
+- MSI product code extraction and detection methods
+- PowerShell ISE dark theme customization
+'@
         }
     }
 }
