@@ -26,7 +26,7 @@ jobs:
         Copy-Item -Path ".\LICENSE" -Destination $releasePath
         
         # Create the zip file with the version in its name (not the folder)
-        $zipName = "QuickSoft-${{ github.ref_name }}.zip"
+        $zipName = "QuickSoft.zip"
         Compress-Archive -Path "$releasePath" -DestinationPath "./$zipName"
 
     - name: Create Release
@@ -45,7 +45,7 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./QuickSoft-${{ github.ref_name }}.zip
-        asset_name: QuickSoft.zip
+        asset_name: QuickSoft-${{ github.ref_name }}.zip
         asset_content_type: application/zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
