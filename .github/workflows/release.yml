@@ -15,8 +15,8 @@ jobs:
     - name: Create Module Package
       shell: pwsh
       run: |
-        # Create release folder
-        $releasePath = ".\release\QuickSoft"
+        # Create release folder with version-specific name
+        $releasePath = ".\release\QuickSoft-${{ github.ref_name }}"
         New-Item -Path $releasePath -ItemType Directory -Force
         
         # Copy module files
