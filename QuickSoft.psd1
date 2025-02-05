@@ -1,6 +1,6 @@
 @{
     RootModule = 'QuickSoft.psm1'
-    ModuleVersion = '1.0.3'
+    ModuleVersion = '1.0.2'
     GUID = 'f1b27db4-5c57-4848-9e19-1537fc079e74'
     Author = 'AutomateSilent'
     CompanyName = 'AutomateSilent'    # Added this to match author
@@ -26,7 +26,7 @@
             LicenseUri = 'https://github.com/AutomateSilent/QuickSoft/blob/main/LICENSE'
             ProjectUri = 'https://github.com/AutomateSilent/QuickSoft'
             ReleaseNotes = @'
-QuickSoft Module v1.0.3 Updates:
+QuickSoft Module v1.0.2 Updates:
 - Fixed Install-Software MSI installation error 1619 with improved elevation and path handling
   - Added robust error handling and logging
 - Full software management and monitoring capabilities

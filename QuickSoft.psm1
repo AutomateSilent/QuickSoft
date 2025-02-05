@@ -7,7 +7,7 @@
 .NOTES
     Module Name: QuickSoft
     Author: AutomateSilent
-    Version: 1.0.3
+    Version: 1.0.2
     Last Updated: 2025-02-04
 #>
 
