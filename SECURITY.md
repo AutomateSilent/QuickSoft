@@ -10,7 +10,7 @@ Use this section to tell people about which versions of your project are current
 
 ## Reporting a Vulnerability
 
-We take the security of QuickSoft seriously. If you believe you have found a security vulnerability, please follow these steps:
+If you believe you have found a security vulnerability, please follow these steps:
 
 1. **DO NOT** open a public issue
 2. Send a private report to [automate.silent@gmail.com]
@@ -42,7 +42,6 @@ We take the security of QuickSoft seriously. If you believe you have found a sec
 
 - All code is reviewed before merging
 - Dependencies are regularly updated
-- Automated security scanning is performed
 - Code signing is used for releases
 - Input validation is performed on all parameters
 - Secure string is used for sensitive data

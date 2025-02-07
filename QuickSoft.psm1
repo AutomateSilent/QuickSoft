@@ -7,8 +7,8 @@
 .NOTES
     Module Name: QuickSoft
     Author: AutomateSilent
-    Version: 1.0.2
-    Last Updated: 2025-02-04
+    Version: 1.1.2
+    Last Updated: 2025-07-04
 #>
 
 # Get all public function definition files
