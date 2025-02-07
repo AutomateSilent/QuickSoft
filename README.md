@@ -7,7 +7,7 @@
 [![PSGallery Platform](https://img.shields.io/powershellgallery/p/PSWindowsUpdate.svg?style=flat&logo=powershell&label=PSGallery%20Platform)](https://www.powershellgallery.com/packages/QuickSoft)
 
 ## 📖 Overview
-QuickSoft is a robust PowerShell module designed for streamlined software management and system monitoring. Built with automation in mind, it simplifies software inventory, deployment detection, and system monitoring tasks.
+QuickSoft is a robust PowerShell module designed for streamlined software management and system monitoring. Built with automation in mind, it simplifies software inventory, deployment, detection, and system monitoring tasks.
 
 ## ✨ Key Features
 - 📦 Software Management (inventory, installation, uninstallation)
@@ -27,7 +27,7 @@ QuickSoft is a robust PowerShell module designed for streamlined software manage
 [![PSGallery Version](https://img.shields.io/powershellgallery/v/QuickSoft?style=flat-square&logo=powershell&label=PSGallery&color=blue)](https://www.powershellgallery.com/packages/QuickSoft)
 ```powershell
 # Install from PSGallery (Recommended)
-Install-Module -Name QuickSoft -Scope CurrentUser
+Install-Module -Name QuickSoft
 
 # Import and verify
 Import-Module QuickSoft
@@ -35,8 +35,9 @@ Get-Command -Module QuickSoft
 ```
 
 ### Manual Installation
-1. Download and extract the module
-2. Place in one of these locations:
+1. Download and extract the module [Lattest Release](https://github.com/AutomateSilent/QuickSoft/releases)
+3. Place in one of these locations:
+   
    ```powershell
    # Current User
    $env:USERPROFILE\Documents\WindowsPowerShell\Modules\QuickSoft
@@ -44,7 +45,8 @@ Get-Command -Module QuickSoft
    # All Users (Requires Admin)
    $env:ProgramFiles\WindowsPowerShell\Modules\QuickSoft
    ```
-3. Import and verify:
+5. Import and verify:
+   
    ```powershell
    Import-Module QuickSoft
    Get-Command -Module QuickSoft
@@ -59,33 +61,23 @@ Get-Command -Module QuickSoft
 Get-Command -Module QuickSoft | Group-Object Verb
 
 # Get help and examples
-Get-Help Get-Software -Full
-Get-Help Get-Software -Examples
+Get-Help New-WinRarSFX -Full
+Get-Help Install-Software -Examples
 ```
-Quick Tip: Use tab completion to explore commands and parameters.
 
 ## 🤝 Contributing
-We welcome contributions! Please follow these steps:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Update documentation
-5. Submit a pull request
+Welcome contributions!
+1. [Submit suggestions](https://github.com/AutomateSilent/QuickSoft/issues/new?template=suggestion.yml)
+2. Submit a pull request
 
 For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🐛 Issues and Support
-- [Report a Bug](https://github.com/AutomateSilent/QuickSoft/issues/new?template=bug_report.md)
-- Before submitting an issue:
-  - Check existing issues
-  - Include PowerShell and OS version details
-  - Provide minimal reproduction steps
+- [Report a Bug](https://github.com/AutomateSilent/QuickSoft/issues/new?template=bug_report.yml)
 
 ## 📖 Documentation
 - [Changelog](CHANGELOG.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Security Policy](SECURITY.md)
-- [Report a Bug](https://github.com/AutomateSilent/QuickSoft/issues/new?template=bug_report.md)
+- [Report a Bug](https://github.com/AutomateSilent/QuickSoft/issues/new?template=bug_report.yml)
+- [LICENSE](LICENSE)
