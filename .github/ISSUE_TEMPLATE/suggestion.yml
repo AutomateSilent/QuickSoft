@@ -1,0 +1,56 @@
+name: Suggestion
+description: Suggest an enhancement for QuickSoft Module
+title: "[Enhancement]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve QuickSoft! Whether it's a new function idea or an enhancement to an existing one, your input helps make the module better.
+
+  - type: dropdown
+    id: suggestion_type
+    attributes:
+      label: Type of Enhancement
+      description: Are you suggesting a new function or an enhancement to an existing one?
+      options:
+        - New Function
+        - Enhance Existing Function
+    validations:
+      required: true
+
+  - type: textarea
+    id: enhancement_description
+    attributes:
+      label: What's your idea?
+      description: |
+        For new functions: Describe what you want the function to do
+        For enhancements: Which function are you looking to improve and how?
+      placeholder: |
+        Example for new function:
+        "A function that can batch rename software installers based on their metadata"
+
+        Example for enhancement:
+        "Add credential parameter to Install-Software to support remote installation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case
+      description: What problem would this solve? How would you or others use this?
+      placeholder: |
+        "This would help when managing a large software repository by..."
+        "This would make it easier to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Context
+      description: Any other information that might help understand your suggestion better?
+      placeholder: |
+        "Would need to handle both MSI and EXE files..."
+        "Similar to how Get-Software currently..."
