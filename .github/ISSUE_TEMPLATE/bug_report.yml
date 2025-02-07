@@ -1,0 +1,104 @@
+name: Bug Report
+description: Report an issue with QuickSoft
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! Please fill out the information below to help us resolve it quickly.
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: What happened?
+      description: Describe what went wrong and what you were trying to do
+      placeholder: "When I tried to install software using Install-Software, it..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Show us the commands you used and what happened
+      placeholder: |
+        ```powershell
+        # Example of the exact commands you ran:
+        Import-Module QuickSoft
+        Install-Software -FilePath "C:\path\to\installer.msi"
+        ```
+        
+        The error message or unexpected behavior was:
+        ```
+        Copy and paste any error messages here
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: "The software should have installed silently without errors"
+    validations:
+      required: true
+
+  - type: input
+    id: ps_version
+    attributes:
+      label: PowerShell Version
+      description: Run $PSVersionTable.PSVersion and paste the result
+      placeholder: "5.1.19041.3031"
+    validations:
+      required: true
+
+  - type: input
+    id: quicksoft_version
+    attributes:
+      label: QuickSoft Version
+      description: Run (Get-Module QuickSoft).Version and paste the result
+      placeholder: "1.1.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os_version
+    attributes:
+      label: Windows Version
+      description: What version of Windows are you running?
+      options:
+        - Windows 11
+        - Windows 10
+        - Windows Server 2022
+        - Windows Server 2019
+        - Windows Server 2016
+        - Other (specify in additional info)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: function_name
+    attributes:
+      label: Affected Function
+      description: Which QuickSoft function has the issue?
+      options:
+        - Install-Software
+        - Get-Software
+        - Get-MSIProductCode
+        - Get-SoftwareDetectionMethod
+        - New-WinRarSFX
+        - Set-ISEDarkTheme
+        - Start-SoftwareManagement
+        - Start-SystemMonitor
+        - Other/Multiple (specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Information
+      description: Any other details that might help? (screenshots, logs, etc.)
+      placeholder: "Add any other context about the problem here"
