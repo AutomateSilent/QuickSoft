@@ -1,13 +1,15 @@
 <#
 .SYNOPSIS
     QuickSoft PowerShell Module
+
 .DESCRIPTION
-    A comprehensive module for software management, detection, and system monitoring.
-    Includes tools for software inventory, uninstallation, MSI management, and system monitoring.
+    PowerShell toolkit for software packaging, path management, and system utilities.
+    Features WinRAR SFX creation, quick directory navigation, and software install, detection, and uninstall functions.  
+
 .NOTES
     Module Name: QuickSoft
     Author: AutomateSilent
-    Version: 1.1.2
+    Version: 1.2.2
     Last Updated: 2025-07-04
 #>
 
