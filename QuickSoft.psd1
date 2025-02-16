@@ -1,6 +1,6 @@
 @{
     RootModule = 'QuickSoft.psm1'
-    ModuleVersion = '1.2.2'
+    ModuleVersion = '1.2.3'
     GUID = 'f1b27db4-5c57-4848-9e19-1537fc079e74'
     Author = 'AutomateSilent'
     CompanyName = 'AutomateSilent'
@@ -14,10 +14,10 @@
         'Get-Software',
         'Get-SoftwareDetectionMethod',
         'Get-SoftwareDetectionMethod2',
-        'Set-ISEDarkTheme',
+        'Set-ISETheme',
         'Install-Software',
         'New-WinRarSFX',
-        'Start-QuickPaths', 
+        'Start-QuickPath', 
         'qp',
         'Show-QuickSoftBanner'
     )
@@ -30,7 +30,7 @@
             LicenseUri = 'https://github.com/AutomateSilent/QuickSoft/blob/main/LICENSE'
             ProjectUri = 'https://github.com/AutomateSilent/QuickSoft'
             ReleaseNotes = @'
-QuickSoft Module v1.2.2
+QuickSoft Module v1.2.3
 
 New Feature 
 * Start-QuickPath - Enhanced directory navigation system
@@ -46,7 +46,7 @@ Core Features
   - Software detection and management
   - MSI product code retrieval
 * PowerShell Enhancements
-  - ISE dark theme
+  - ISE theme customization (Neon, Dark, Reset)
   - Quick access utilities
   - Profile customization
 
