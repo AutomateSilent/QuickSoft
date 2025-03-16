@@ -5,7 +5,7 @@
 [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/QuickSoft.svg?style=flat&logo=powershell&label=PSGallery%20Downloads)](https://www.powershellgallery.com/packages/QuickSoft)
 [![PowerShell Version](https://img.shields.io/badge/PowerShell-5.1-blue?style=flat&logo=powershell)](https://www.powershellgallery.com/packages/QuickSoft)
 [![PSGallery Platform](https://img.shields.io/powershellgallery/p/PSWindowsUpdate.svg?style=flat&logo=powershell&label=PSGallery%20Platform)](https://www.powershellgallery.com/packages/QuickSoft)
-
+![QuickSoft Logo](https://github.com/user-attachments/assets/c65679b4-c5cb-4b80-b807-aa6bcb796a06)
 ## 📖 Overview
 QuickSoft is a robust PowerShell module designed for streamlined software management and system monitoring. Built with automation in mind, it simplifies software inventory, deployment, detection, and system monitoring tasks.
 
